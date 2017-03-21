@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="petrinet.Net"
+            id="hu.aronfabian.petrinet.plugin.contribution1">
+         <menu
+               label="Generate"
+               path="additions"
+               id="hu.aronfabian.petrinet.plugin.menu1">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Generate Output"
+               class="hu.aronfabian.petrinet.plugin.popup.actions.GenerateOutput"
+               menubarPath="hu.aronfabian.petrinet.plugin.menu1/group1"
+               enablesFor="1"
+               id="hu.aronfabian.petrinet.plugin.newAction">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
