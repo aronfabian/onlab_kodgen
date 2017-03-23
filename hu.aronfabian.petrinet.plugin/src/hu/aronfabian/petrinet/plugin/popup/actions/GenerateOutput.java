@@ -1,9 +1,7 @@
 package hu.aronfabian.petrinet.plugin.popup.actions;
 
 import java.io.ByteArrayInputStream;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
@@ -15,18 +13,16 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.swt.widgets.DirectoryDialog;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
-import example1.HelloWorld;
-import petrinet.Arc;
+import hu.aronfabian.petrinet.plugin.xtend.GraphPrint;
 import petrinet.Net;
+import petrinet.Place;
+import petrinet.Transition;
 
 public class GenerateOutput implements IObjectActionDelegate {
 
@@ -54,35 +50,51 @@ public class GenerateOutput implements IObjectActionDelegate {
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			Net net = (Net) structuredSelection.getFirstElement();
-			Set<Integer> places = new HashSet<Integer>();
-			Set<Integer> transitions = new HashSet<Integer>();
+			Set<Integer> viewedPlaces = new HashSet<Integer>();
+			Set<Integer> viewedTransitions = new HashSet<Integer>();
 
 			WorkspaceJob job = new WorkspaceJob("Generation") {
 				@Override
-				public IStatus runInWorkspace(IProgressMonitor monitor){
+				public IStatus runInWorkspace(IProgressMonitor monitor) {
 					// TODO bemenetek ellenõrzése
 					StringBuilder sb = new StringBuilder();
-					sb.append(HelloWorld.base());
+					sb.append(GraphPrint.base());
 
-					// TODO kimeneti String elõkészítése
-					for (Arc arc : net.getArc()) {
-						if (!places.contains(arc.getPlace().getId())) {
-							places.add(arc.getPlace().getId());
-							// TODO az adott Place-t a kimeneti Stringbe írni
-							sb.append(HelloWorld.place(arc.getPlace().getId()));
+					// TODO a gráf bejárása
+					EList<Place> placeList = net.getPlace();
+					int edgeId = 0;
+					for (Place currentPlace : placeList) {
+						if (viewedPlaces.add(currentPlace.getId())) {
+							sb.append(GraphPrint.place(currentPlace.getId()));
 						}
-						if (!transitions.contains(arc.getTransition().getId())) {
-							transitions.add(arc.getTransition().getId());
-							// TODO az adott Transitions-t a kimeneti Stringbe
-							// írni
-							sb.append(HelloWorld.transition(arc.getTransition().getId()));
+						EList<Transition> reachableTransitions = currentPlace.getTransition();
+						for (Transition currentTransition : reachableTransitions) {
+							if (viewedTransitions.add(currentTransition.getId())) {
+								sb.append(GraphPrint.transition(currentTransition.getId()));
+							}
+							sb.append(GraphPrint.arcPtoT(edgeId, currentPlace.getId(), currentTransition.getId()));
+							edgeId++;
 						}
 
-						// TODO az aktuális él kimeneti Stringbe írása
-						sb.append(HelloWorld.arc(arc.getId(), arc.getPlace().getId(), arc.getTransition().getId()));
 					}
+					EList<Transition> transitionList = net.getTransition();
+					for (Transition currentTransition : transitionList) {
+						if (viewedTransitions.add(currentTransition.getId())) {
+							sb.append(GraphPrint.transition(currentTransition.getId()));
+						}
+						EList<Place> reachablePlaces = currentTransition.getPlace();
+						for (Place currentPlace : reachablePlaces) {
+							if (viewedPlaces.add(currentPlace.getId())) {
+								sb.append(GraphPrint.place(currentPlace.getId()));
+							}
+							sb.append(GraphPrint.arcTtoP(edgeId, currentTransition.getId(), currentPlace.getId()));
+							edgeId++;
+						}
+
+					}
+
 					// TODO kimeneti String lezárása
-					sb.append(HelloWorld.end());
+					sb.append(GraphPrint.end());
 
 					IFile file = ResourcesPlugin.getWorkspace().getRoot().getProject("petritesting")
 							.getFile("test.graphml");
