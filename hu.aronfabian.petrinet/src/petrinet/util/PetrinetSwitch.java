@@ -78,12 +78,6 @@ public class PetrinetSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PetrinetPackage.ARC: {
-				Arc arc = (Arc)theEObject;
-				T result = caseArc(arc);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case PetrinetPackage.NET: {
 				Net net = (Net)theEObject;
 				T result = caseNet(net);
@@ -93,12 +87,6 @@ public class PetrinetSwitch<T> extends Switch<T> {
 			case PetrinetPackage.BOX: {
 				Box box = (Box)theEObject;
 				T result = caseBox(box);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PetrinetPackage.TOKEN: {
-				Token token = (Token)theEObject;
-				T result = caseToken(token);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -137,21 +125,6 @@ public class PetrinetSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Arc</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Arc</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseArc(Arc object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Net</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -178,21 +151,6 @@ public class PetrinetSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBox(Box object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Token</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Token</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseToken(Token object) {
 		return null;
 	}
 

@@ -67,22 +67,13 @@ public interface PetrinetPackage extends EPackage {
 	int PLACE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Token</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLACE__TOKEN = 0;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__ID = 1;
+	int PLACE__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -91,16 +82,16 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__NAME = 2;
+	int PLACE__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Arc</b></em>' reference list.
+	 * The feature id for the '<em><b>Transition</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__ARC = 3;
+	int PLACE__TRANSITION = 2;
 
 	/**
 	 * The number of structural features of the '<em>Place</em>' class.
@@ -109,7 +100,7 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE_FEATURE_COUNT = 4;
+	int PLACE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Place</em>' class.
@@ -149,13 +140,22 @@ public interface PetrinetPackage extends EPackage {
 	int TRANSITION__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Arc</b></em>' reference list.
+	 * The feature id for the '<em><b>Box</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ARC = 2;
+	int TRANSITION__BOX = 2;
+
+	/**
+	 * The feature id for the '<em><b>Place</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__PLACE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -164,7 +164,7 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = 3;
+	int TRANSITION_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -176,88 +176,6 @@ public interface PetrinetPackage extends EPackage {
 	int TRANSITION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link petrinet.impl.ArcImpl <em>Arc</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see petrinet.impl.ArcImpl
-	 * @see petrinet.impl.PetrinetPackageImpl#getArc()
-	 * @generated
-	 */
-	int ARC = 2;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARC__ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Weight</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARC__WEIGHT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Place</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARC__PLACE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Transition</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARC__TRANSITION = 3;
-
-	/**
-	 * The feature id for the '<em><b>Box In</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARC__BOX_IN = 4;
-
-	/**
-	 * The feature id for the '<em><b>Box Out</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARC__BOX_OUT = 5;
-
-	/**
-	 * The number of structural features of the '<em>Arc</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARC_FEATURE_COUNT = 6;
-
-	/**
-	 * The number of operations of the '<em>Arc</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARC_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link petrinet.impl.NetImpl <em>Net</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -265,7 +183,7 @@ public interface PetrinetPackage extends EPackage {
 	 * @see petrinet.impl.PetrinetPackageImpl#getNet()
 	 * @generated
 	 */
-	int NET = 3;
+	int NET = 2;
 
 	/**
 	 * The feature id for the '<em><b>Place</b></em>' containment reference list.
@@ -277,22 +195,13 @@ public interface PetrinetPackage extends EPackage {
 	int NET__PLACE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Arc</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NET__ARC = 1;
-
-	/**
 	 * The feature id for the '<em><b>Transition</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NET__TRANSITION = 2;
+	int NET__TRANSITION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Box</b></em>' containment reference list.
@@ -301,16 +210,7 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NET__BOX = 3;
-
-	/**
-	 * The feature id for the '<em><b>Token</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NET__TOKEN = 4;
+	int NET__BOX = 2;
 
 	/**
 	 * The number of structural features of the '<em>Net</em>' class.
@@ -319,7 +219,7 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NET_FEATURE_COUNT = 5;
+	int NET_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Net</em>' class.
@@ -338,34 +238,16 @@ public interface PetrinetPackage extends EPackage {
 	 * @see petrinet.impl.PetrinetPackageImpl#getBox()
 	 * @generated
 	 */
-	int BOX = 4;
+	int BOX = 3;
 
 	/**
-	 * The feature id for the '<em><b>Token</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOX__TOKEN = 0;
-
-	/**
-	 * The feature id for the '<em><b>Place</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOX__PLACE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Arc</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOX__ARC = 2;
+	int BOX__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -374,34 +256,16 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOX__NAME = 3;
+	int BOX__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Arc In</b></em>' reference list.
+	 * The feature id for the '<em><b>Place</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOX__ARC_IN = 4;
-
-	/**
-	 * The feature id for the '<em><b>Transition</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOX__TRANSITION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Arc Out</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOX__ARC_OUT = 6;
+	int BOX__PLACE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Box</em>' class.
@@ -410,7 +274,7 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOX_FEATURE_COUNT = 7;
+	int BOX_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Box</em>' class.
@@ -420,43 +284,6 @@ public interface PetrinetPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOX_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link petrinet.impl.TokenImpl <em>Token</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see petrinet.impl.TokenImpl
-	 * @see petrinet.impl.PetrinetPackageImpl#getToken()
-	 * @generated
-	 */
-	int TOKEN = 5;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOKEN__ID = 0;
-
-	/**
-	 * The number of structural features of the '<em>Token</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOKEN_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Token</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOKEN_OPERATION_COUNT = 0;
 
 
 	/**
@@ -468,28 +295,6 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPlace();
-
-	/**
-	 * Returns the meta object for the reference list '{@link petrinet.Place#getArc <em>Arc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Arc</em>'.
-	 * @see petrinet.Place#getArc()
-	 * @see #getPlace()
-	 * @generated
-	 */
-	EReference getPlace_Arc();
-
-	/**
-	 * Returns the meta object for the reference list '{@link petrinet.Place#getToken <em>Token</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Token</em>'.
-	 * @see petrinet.Place#getToken()
-	 * @see #getPlace()
-	 * @generated
-	 */
-	EReference getPlace_Token();
 
 	/**
 	 * Returns the meta object for the attribute '{@link petrinet.Place#getId <em>Id</em>}'.
@@ -514,6 +319,17 @@ public interface PetrinetPackage extends EPackage {
 	EAttribute getPlace_Name();
 
 	/**
+	 * Returns the meta object for the reference list '{@link petrinet.Place#getTransition <em>Transition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Transition</em>'.
+	 * @see petrinet.Place#getTransition()
+	 * @see #getPlace()
+	 * @generated
+	 */
+	EReference getPlace_Transition();
+
+	/**
 	 * Returns the meta object for class '{@link petrinet.Transition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -522,17 +338,6 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTransition();
-
-	/**
-	 * Returns the meta object for the reference list '{@link petrinet.Transition#getArc <em>Arc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Arc</em>'.
-	 * @see petrinet.Transition#getArc()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EReference getTransition_Arc();
 
 	/**
 	 * Returns the meta object for the attribute '{@link petrinet.Transition#getId <em>Id</em>}'.
@@ -557,80 +362,26 @@ public interface PetrinetPackage extends EPackage {
 	EAttribute getTransition_Name();
 
 	/**
-	 * Returns the meta object for class '{@link petrinet.Arc <em>Arc</em>}'.
+	 * Returns the meta object for the reference list '{@link petrinet.Transition#getBox <em>Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Arc</em>'.
-	 * @see petrinet.Arc
+	 * @return the meta object for the reference list '<em>Box</em>'.
+	 * @see petrinet.Transition#getBox()
+	 * @see #getTransition()
 	 * @generated
 	 */
-	EClass getArc();
+	EReference getTransition_Box();
 
 	/**
-	 * Returns the meta object for the attribute '{@link petrinet.Arc#getId <em>Id</em>}'.
+	 * Returns the meta object for the reference list '{@link petrinet.Transition#getPlace <em>Place</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see petrinet.Arc#getId()
-	 * @see #getArc()
+	 * @return the meta object for the reference list '<em>Place</em>'.
+	 * @see petrinet.Transition#getPlace()
+	 * @see #getTransition()
 	 * @generated
 	 */
-	EAttribute getArc_Id();
-
-	/**
-	 * Returns the meta object for the attribute '{@link petrinet.Arc#getWeight <em>Weight</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Weight</em>'.
-	 * @see petrinet.Arc#getWeight()
-	 * @see #getArc()
-	 * @generated
-	 */
-	EAttribute getArc_Weight();
-
-	/**
-	 * Returns the meta object for the reference '{@link petrinet.Arc#getPlace <em>Place</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Place</em>'.
-	 * @see petrinet.Arc#getPlace()
-	 * @see #getArc()
-	 * @generated
-	 */
-	EReference getArc_Place();
-
-	/**
-	 * Returns the meta object for the reference '{@link petrinet.Arc#getTransition <em>Transition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Transition</em>'.
-	 * @see petrinet.Arc#getTransition()
-	 * @see #getArc()
-	 * @generated
-	 */
-	EReference getArc_Transition();
-
-	/**
-	 * Returns the meta object for the reference '{@link petrinet.Arc#getBoxIn <em>Box In</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Box In</em>'.
-	 * @see petrinet.Arc#getBoxIn()
-	 * @see #getArc()
-	 * @generated
-	 */
-	EReference getArc_BoxIn();
-
-	/**
-	 * Returns the meta object for the reference '{@link petrinet.Arc#getBoxOut <em>Box Out</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Box Out</em>'.
-	 * @see petrinet.Arc#getBoxOut()
-	 * @see #getArc()
-	 * @generated
-	 */
-	EReference getArc_BoxOut();
+	EReference getTransition_Place();
 
 	/**
 	 * Returns the meta object for class '{@link petrinet.Net <em>Net</em>}'.
@@ -652,17 +403,6 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getNet_Place();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link petrinet.Net#getArc <em>Arc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Arc</em>'.
-	 * @see petrinet.Net#getArc()
-	 * @see #getNet()
-	 * @generated
-	 */
-	EReference getNet_Arc();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link petrinet.Net#getTransition <em>Transition</em>}'.
@@ -687,17 +427,6 @@ public interface PetrinetPackage extends EPackage {
 	EReference getNet_Box();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link petrinet.Net#getToken <em>Token</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Token</em>'.
-	 * @see petrinet.Net#getToken()
-	 * @see #getNet()
-	 * @generated
-	 */
-	EReference getNet_Token();
-
-	/**
 	 * Returns the meta object for class '{@link petrinet.Box <em>Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -708,37 +437,15 @@ public interface PetrinetPackage extends EPackage {
 	EClass getBox();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link petrinet.Box#getToken <em>Token</em>}'.
+	 * Returns the meta object for the attribute '{@link petrinet.Box#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Token</em>'.
-	 * @see petrinet.Box#getToken()
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see petrinet.Box#getId()
 	 * @see #getBox()
 	 * @generated
 	 */
-	EReference getBox_Token();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link petrinet.Box#getPlace <em>Place</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Place</em>'.
-	 * @see petrinet.Box#getPlace()
-	 * @see #getBox()
-	 * @generated
-	 */
-	EReference getBox_Place();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link petrinet.Box#getArc <em>Arc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Arc</em>'.
-	 * @see petrinet.Box#getArc()
-	 * @see #getBox()
-	 * @generated
-	 */
-	EReference getBox_Arc();
+	EAttribute getBox_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link petrinet.Box#getName <em>Name</em>}'.
@@ -752,58 +459,15 @@ public interface PetrinetPackage extends EPackage {
 	EAttribute getBox_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link petrinet.Box#getArcIn <em>Arc In</em>}'.
+	 * Returns the meta object for the reference list '{@link petrinet.Box#getPlace <em>Place</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Arc In</em>'.
-	 * @see petrinet.Box#getArcIn()
+	 * @return the meta object for the reference list '<em>Place</em>'.
+	 * @see petrinet.Box#getPlace()
 	 * @see #getBox()
 	 * @generated
 	 */
-	EReference getBox_ArcIn();
-
-	/**
-	 * Returns the meta object for the reference list '{@link petrinet.Box#getArcOut <em>Arc Out</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Arc Out</em>'.
-	 * @see petrinet.Box#getArcOut()
-	 * @see #getBox()
-	 * @generated
-	 */
-	EReference getBox_ArcOut();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link petrinet.Box#getTransition <em>Transition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Transition</em>'.
-	 * @see petrinet.Box#getTransition()
-	 * @see #getBox()
-	 * @generated
-	 */
-	EReference getBox_Transition();
-
-	/**
-	 * Returns the meta object for class '{@link petrinet.Token <em>Token</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Token</em>'.
-	 * @see petrinet.Token
-	 * @generated
-	 */
-	EClass getToken();
-
-	/**
-	 * Returns the meta object for the attribute '{@link petrinet.Token#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see petrinet.Token#getId()
-	 * @see #getToken()
-	 * @generated
-	 */
-	EAttribute getToken_Id();
+	EReference getBox_Place();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -839,22 +503,6 @@ public interface PetrinetPackage extends EPackage {
 		EClass PLACE = eINSTANCE.getPlace();
 
 		/**
-		 * The meta object literal for the '<em><b>Arc</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PLACE__ARC = eINSTANCE.getPlace_Arc();
-
-		/**
-		 * The meta object literal for the '<em><b>Token</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PLACE__TOKEN = eINSTANCE.getPlace_Token();
-
-		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -871,6 +519,14 @@ public interface PetrinetPackage extends EPackage {
 		EAttribute PLACE__NAME = eINSTANCE.getPlace_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Transition</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLACE__TRANSITION = eINSTANCE.getPlace_Transition();
+
+		/**
 		 * The meta object literal for the '{@link petrinet.impl.TransitionImpl <em>Transition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -879,14 +535,6 @@ public interface PetrinetPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRANSITION = eINSTANCE.getTransition();
-
-		/**
-		 * The meta object literal for the '<em><b>Arc</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRANSITION__ARC = eINSTANCE.getTransition_Arc();
 
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
@@ -905,62 +553,20 @@ public interface PetrinetPackage extends EPackage {
 		EAttribute TRANSITION__NAME = eINSTANCE.getTransition_Name();
 
 		/**
-		 * The meta object literal for the '{@link petrinet.impl.ArcImpl <em>Arc</em>}' class.
+		 * The meta object literal for the '<em><b>Box</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see petrinet.impl.ArcImpl
-		 * @see petrinet.impl.PetrinetPackageImpl#getArc()
 		 * @generated
 		 */
-		EClass ARC = eINSTANCE.getArc();
+		EReference TRANSITION__BOX = eINSTANCE.getTransition_Box();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Place</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARC__ID = eINSTANCE.getArc_Id();
-
-		/**
-		 * The meta object literal for the '<em><b>Weight</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ARC__WEIGHT = eINSTANCE.getArc_Weight();
-
-		/**
-		 * The meta object literal for the '<em><b>Place</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ARC__PLACE = eINSTANCE.getArc_Place();
-
-		/**
-		 * The meta object literal for the '<em><b>Transition</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ARC__TRANSITION = eINSTANCE.getArc_Transition();
-
-		/**
-		 * The meta object literal for the '<em><b>Box In</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ARC__BOX_IN = eINSTANCE.getArc_BoxIn();
-
-		/**
-		 * The meta object literal for the '<em><b>Box Out</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ARC__BOX_OUT = eINSTANCE.getArc_BoxOut();
+		EReference TRANSITION__PLACE = eINSTANCE.getTransition_Place();
 
 		/**
 		 * The meta object literal for the '{@link petrinet.impl.NetImpl <em>Net</em>}' class.
@@ -981,14 +587,6 @@ public interface PetrinetPackage extends EPackage {
 		EReference NET__PLACE = eINSTANCE.getNet_Place();
 
 		/**
-		 * The meta object literal for the '<em><b>Arc</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference NET__ARC = eINSTANCE.getNet_Arc();
-
-		/**
 		 * The meta object literal for the '<em><b>Transition</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1005,14 +603,6 @@ public interface PetrinetPackage extends EPackage {
 		EReference NET__BOX = eINSTANCE.getNet_Box();
 
 		/**
-		 * The meta object literal for the '<em><b>Token</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference NET__TOKEN = eINSTANCE.getNet_Token();
-
-		/**
 		 * The meta object literal for the '{@link petrinet.impl.BoxImpl <em>Box</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1023,28 +613,12 @@ public interface PetrinetPackage extends EPackage {
 		EClass BOX = eINSTANCE.getBox();
 
 		/**
-		 * The meta object literal for the '<em><b>Token</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BOX__TOKEN = eINSTANCE.getBox_Token();
-
-		/**
-		 * The meta object literal for the '<em><b>Place</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BOX__PLACE = eINSTANCE.getBox_Place();
-
-		/**
-		 * The meta object literal for the '<em><b>Arc</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BOX__ARC = eINSTANCE.getBox_Arc();
+		EAttribute BOX__ID = eINSTANCE.getBox_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1055,46 +629,12 @@ public interface PetrinetPackage extends EPackage {
 		EAttribute BOX__NAME = eINSTANCE.getBox_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Arc In</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Place</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BOX__ARC_IN = eINSTANCE.getBox_ArcIn();
-
-		/**
-		 * The meta object literal for the '<em><b>Arc Out</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BOX__ARC_OUT = eINSTANCE.getBox_ArcOut();
-
-		/**
-		 * The meta object literal for the '<em><b>Transition</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BOX__TRANSITION = eINSTANCE.getBox_Transition();
-
-		/**
-		 * The meta object literal for the '{@link petrinet.impl.TokenImpl <em>Token</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see petrinet.impl.TokenImpl
-		 * @see petrinet.impl.PetrinetPackageImpl#getToken()
-		 * @generated
-		 */
-		EClass TOKEN = eINSTANCE.getToken();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TOKEN__ID = eINSTANCE.getToken_Id();
+		EReference BOX__PLACE = eINSTANCE.getBox_Place();
 
 	}
 

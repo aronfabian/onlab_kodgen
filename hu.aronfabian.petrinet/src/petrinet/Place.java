@@ -15,10 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link petrinet.Place#getToken <em>Token</em>}</li>
  *   <li>{@link petrinet.Place#getId <em>Id</em>}</li>
  *   <li>{@link petrinet.Place#getName <em>Name</em>}</li>
- *   <li>{@link petrinet.Place#getArc <em>Arc</em>}</li>
+ *   <li>{@link petrinet.Place#getTransition <em>Transition</em>}</li>
  * </ul>
  *
  * @see petrinet.PetrinetPackage#getPlace()
@@ -26,40 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Place extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Arc</b></em>' reference list.
-	 * The list contents are of type {@link petrinet.Arc}.
-	 * It is bidirectional and its opposite is '{@link petrinet.Arc#getPlace <em>Place</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Arc</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Arc</em>' reference list.
-	 * @see petrinet.PetrinetPackage#getPlace_Arc()
-	 * @see petrinet.Arc#getPlace
-	 * @model opposite="place"
-	 * @generated
-	 */
-	EList<Arc> getArc();
-
-	/**
-	 * Returns the value of the '<em><b>Token</b></em>' reference list.
-	 * The list contents are of type {@link petrinet.Token}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Token</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Token</em>' reference list.
-	 * @see petrinet.PetrinetPackage#getPlace_Token()
-	 * @model
-	 * @generated
-	 */
-	EList<Token> getToken();
-
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -111,5 +76,21 @@ public interface Place extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Transition</b></em>' reference list.
+	 * The list contents are of type {@link petrinet.Transition}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Transition</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Transition</em>' reference list.
+	 * @see petrinet.PetrinetPackage#getPlace_Transition()
+	 * @model
+	 * @generated
+	 */
+	EList<Transition> getTransition();
 
 } // Place

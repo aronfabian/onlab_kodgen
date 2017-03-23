@@ -16,10 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link petrinet.Net#getPlace <em>Place</em>}</li>
- *   <li>{@link petrinet.Net#getArc <em>Arc</em>}</li>
  *   <li>{@link petrinet.Net#getTransition <em>Transition</em>}</li>
  *   <li>{@link petrinet.Net#getBox <em>Box</em>}</li>
- *   <li>{@link petrinet.Net#getToken <em>Token</em>}</li>
  * </ul>
  *
  * @see petrinet.PetrinetPackage#getNet()
@@ -42,22 +40,6 @@ public interface Net extends EObject {
 	 * @generated
 	 */
 	EList<Place> getPlace();
-
-	/**
-	 * Returns the value of the '<em><b>Arc</b></em>' containment reference list.
-	 * The list contents are of type {@link petrinet.Arc}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Arc</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Arc</em>' containment reference list.
-	 * @see petrinet.PetrinetPackage#getNet_Arc()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Arc> getArc();
 
 	/**
 	 * Returns the value of the '<em><b>Transition</b></em>' containment reference list.
@@ -90,21 +72,5 @@ public interface Net extends EObject {
 	 * @generated
 	 */
 	EList<Box> getBox();
-
-	/**
-	 * Returns the value of the '<em><b>Token</b></em>' containment reference list.
-	 * The list contents are of type {@link petrinet.Token}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Token</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Token</em>' containment reference list.
-	 * @see petrinet.PetrinetPackage#getNet_Token()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Token> getToken();
 
 } // Net

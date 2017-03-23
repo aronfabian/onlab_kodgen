@@ -15,13 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link petrinet.Box#getToken <em>Token</em>}</li>
- *   <li>{@link petrinet.Box#getPlace <em>Place</em>}</li>
- *   <li>{@link petrinet.Box#getArc <em>Arc</em>}</li>
+ *   <li>{@link petrinet.Box#getId <em>Id</em>}</li>
  *   <li>{@link petrinet.Box#getName <em>Name</em>}</li>
- *   <li>{@link petrinet.Box#getArcIn <em>Arc In</em>}</li>
- *   <li>{@link petrinet.Box#getTransition <em>Transition</em>}</li>
- *   <li>{@link petrinet.Box#getArcOut <em>Arc Out</em>}</li>
+ *   <li>{@link petrinet.Box#getPlace <em>Place</em>}</li>
  * </ul>
  *
  * @see petrinet.PetrinetPackage#getBox()
@@ -30,52 +26,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Box extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Token</b></em>' containment reference list.
-	 * The list contents are of type {@link petrinet.Token}.
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Token</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Token</em>' containment reference list.
-	 * @see petrinet.PetrinetPackage#getBox_Token()
-	 * @model containment="true"
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(int)
+	 * @see petrinet.PetrinetPackage#getBox_Id()
+	 * @model
 	 * @generated
 	 */
-	EList<Token> getToken();
+	int getId();
 
 	/**
-	 * Returns the value of the '<em><b>Place</b></em>' containment reference list.
-	 * The list contents are of type {@link petrinet.Place}.
+	 * Sets the value of the '{@link petrinet.Box#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Place</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Place</em>' containment reference list.
-	 * @see petrinet.PetrinetPackage#getBox_Place()
-	 * @model containment="true"
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
 	 * @generated
 	 */
-	EList<Place> getPlace();
-
-	/**
-	 * Returns the value of the '<em><b>Arc</b></em>' containment reference list.
-	 * The list contents are of type {@link petrinet.Arc}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Arc</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Arc</em>' containment reference list.
-	 * @see petrinet.PetrinetPackage#getBox_Arc()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Arc> getArc();
+	void setId(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -104,55 +78,19 @@ public interface Box extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Arc In</b></em>' reference list.
-	 * The list contents are of type {@link petrinet.Arc}.
-	 * It is bidirectional and its opposite is '{@link petrinet.Arc#getBoxIn <em>Box In</em>}'.
+	 * Returns the value of the '<em><b>Place</b></em>' reference list.
+	 * The list contents are of type {@link petrinet.Place}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Arc In</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Place</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Arc In</em>' reference list.
-	 * @see petrinet.PetrinetPackage#getBox_ArcIn()
-	 * @see petrinet.Arc#getBoxIn
-	 * @model opposite="boxIn"
+	 * @return the value of the '<em>Place</em>' reference list.
+	 * @see petrinet.PetrinetPackage#getBox_Place()
+	 * @model
 	 * @generated
 	 */
-	EList<Arc> getArcIn();
-
-	/**
-	 * Returns the value of the '<em><b>Arc Out</b></em>' reference list.
-	 * The list contents are of type {@link petrinet.Arc}.
-	 * It is bidirectional and its opposite is '{@link petrinet.Arc#getBoxOut <em>Box Out</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Arc Out</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Arc Out</em>' reference list.
-	 * @see petrinet.PetrinetPackage#getBox_ArcOut()
-	 * @see petrinet.Arc#getBoxOut
-	 * @model opposite="boxOut"
-	 * @generated
-	 */
-	EList<Arc> getArcOut();
-
-	/**
-	 * Returns the value of the '<em><b>Transition</b></em>' containment reference list.
-	 * The list contents are of type {@link petrinet.Transition}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Transition</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Transition</em>' containment reference list.
-	 * @see petrinet.PetrinetPackage#getBox_Transition()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Transition> getTransition();
+	EList<Place> getPlace();
 
 } // Box

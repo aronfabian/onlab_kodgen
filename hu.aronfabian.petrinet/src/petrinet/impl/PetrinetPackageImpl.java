@@ -9,13 +9,11 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import petrinet.Arc;
 import petrinet.Box;
 import petrinet.Net;
 import petrinet.PetrinetFactory;
 import petrinet.PetrinetPackage;
 import petrinet.Place;
-import petrinet.Token;
 import petrinet.Transition;
 
 /**
@@ -44,13 +42,6 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass arcEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass netEClass = null;
 
 	/**
@@ -59,13 +50,6 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * @generated
 	 */
 	private EClass boxEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass tokenEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -142,26 +126,8 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPlace_Arc() {
-		return (EReference)placeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPlace_Token() {
-		return (EReference)placeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getPlace_Id() {
-		return (EAttribute)placeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)placeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -170,7 +136,16 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * @generated
 	 */
 	public EAttribute getPlace_Name() {
-		return (EAttribute)placeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)placeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPlace_Transition() {
+		return (EReference)placeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -180,15 +155,6 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 */
 	public EClass getTransition() {
 		return transitionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTransition_Arc() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -214,8 +180,8 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getArc() {
-		return arcEClass;
+	public EReference getTransition_Box() {
+		return (EReference)transitionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -223,53 +189,8 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getArc_Id() {
-		return (EAttribute)arcEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getArc_Weight() {
-		return (EAttribute)arcEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getArc_Place() {
-		return (EReference)arcEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getArc_Transition() {
-		return (EReference)arcEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getArc_BoxIn() {
-		return (EReference)arcEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getArc_BoxOut() {
-		return (EReference)arcEClass.getEStructuralFeatures().get(5);
+	public EReference getTransition_Place() {
+		return (EReference)transitionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -295,7 +216,7 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getNet_Arc() {
+	public EReference getNet_Transition() {
 		return (EReference)netEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -304,26 +225,8 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getNet_Transition() {
-		return (EReference)netEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getNet_Box() {
-		return (EReference)netEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getNet_Token() {
-		return (EReference)netEClass.getEStructuralFeatures().get(4);
+		return (EReference)netEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -340,26 +243,8 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBox_Token() {
-		return (EReference)boxEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBox_Place() {
-		return (EReference)boxEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBox_Arc() {
-		return (EReference)boxEClass.getEStructuralFeatures().get(2);
+	public EAttribute getBox_Id() {
+		return (EAttribute)boxEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -368,7 +253,7 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * @generated
 	 */
 	public EAttribute getBox_Name() {
-		return (EAttribute)boxEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)boxEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -376,44 +261,8 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBox_ArcIn() {
-		return (EReference)boxEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBox_ArcOut() {
-		return (EReference)boxEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBox_Transition() {
-		return (EReference)boxEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getToken() {
-		return tokenEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getToken_Id() {
-		return (EAttribute)tokenEClass.getEStructuralFeatures().get(0);
+	public EReference getBox_Place() {
+		return (EReference)boxEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -445,42 +294,25 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 
 		// Create classes and their features
 		placeEClass = createEClass(PLACE);
-		createEReference(placeEClass, PLACE__TOKEN);
 		createEAttribute(placeEClass, PLACE__ID);
 		createEAttribute(placeEClass, PLACE__NAME);
-		createEReference(placeEClass, PLACE__ARC);
+		createEReference(placeEClass, PLACE__TRANSITION);
 
 		transitionEClass = createEClass(TRANSITION);
 		createEAttribute(transitionEClass, TRANSITION__ID);
 		createEAttribute(transitionEClass, TRANSITION__NAME);
-		createEReference(transitionEClass, TRANSITION__ARC);
-
-		arcEClass = createEClass(ARC);
-		createEAttribute(arcEClass, ARC__ID);
-		createEAttribute(arcEClass, ARC__WEIGHT);
-		createEReference(arcEClass, ARC__PLACE);
-		createEReference(arcEClass, ARC__TRANSITION);
-		createEReference(arcEClass, ARC__BOX_IN);
-		createEReference(arcEClass, ARC__BOX_OUT);
+		createEReference(transitionEClass, TRANSITION__BOX);
+		createEReference(transitionEClass, TRANSITION__PLACE);
 
 		netEClass = createEClass(NET);
 		createEReference(netEClass, NET__PLACE);
-		createEReference(netEClass, NET__ARC);
 		createEReference(netEClass, NET__TRANSITION);
 		createEReference(netEClass, NET__BOX);
-		createEReference(netEClass, NET__TOKEN);
 
 		boxEClass = createEClass(BOX);
-		createEReference(boxEClass, BOX__TOKEN);
-		createEReference(boxEClass, BOX__PLACE);
-		createEReference(boxEClass, BOX__ARC);
+		createEAttribute(boxEClass, BOX__ID);
 		createEAttribute(boxEClass, BOX__NAME);
-		createEReference(boxEClass, BOX__ARC_IN);
-		createEReference(boxEClass, BOX__TRANSITION);
-		createEReference(boxEClass, BOX__ARC_OUT);
-
-		tokenEClass = createEClass(TOKEN);
-		createEAttribute(tokenEClass, TOKEN__ID);
+		createEReference(boxEClass, BOX__PLACE);
 	}
 
 	/**
@@ -514,42 +346,25 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(placeEClass, Place.class, "Place", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPlace_Token(), this.getToken(), null, "token", null, 0, -1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPlace_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPlace_Name(), ecorePackage.getEString(), "name", null, 0, 1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPlace_Arc(), this.getArc(), this.getArc_Place(), "arc", null, 0, -1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPlace_Transition(), this.getTransition(), null, "transition", null, 0, -1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTransition_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTransition_Arc(), this.getArc(), this.getArc_Transition(), "arc", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(arcEClass, Arc.class, "Arc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getArc_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getArc_Weight(), ecorePackage.getEInt(), "weight", "1", 0, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArc_Place(), this.getPlace(), this.getPlace_Arc(), "place", null, 0, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArc_Transition(), this.getTransition(), this.getTransition_Arc(), "transition", null, 0, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArc_BoxIn(), this.getBox(), this.getBox_ArcIn(), "boxIn", null, 0, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArc_BoxOut(), this.getBox(), this.getBox_ArcOut(), "boxOut", null, 0, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_Box(), this.getBox(), null, "box", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_Place(), this.getPlace(), null, "place", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(netEClass, Net.class, "Net", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNet_Place(), this.getPlace(), null, "place", null, 0, -1, Net.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNet_Arc(), this.getArc(), null, "arc", null, 0, -1, Net.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNet_Transition(), this.getTransition(), null, "transition", null, 0, -1, Net.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNet_Box(), this.getBox(), null, "box", null, 0, -1, Net.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNet_Token(), this.getToken(), null, "token", null, 0, -1, Net.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(boxEClass, Box.class, "Box", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBox_Token(), this.getToken(), null, "token", null, 0, -1, Box.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBox_Place(), this.getPlace(), null, "place", null, 0, -1, Box.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBox_Arc(), this.getArc(), null, "arc", null, 0, -1, Box.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBox_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Box.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBox_Name(), ecorePackage.getEString(), "name", null, 0, 1, Box.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBox_ArcIn(), this.getArc(), this.getArc_BoxIn(), "arcIn", null, 0, -1, Box.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBox_Transition(), this.getTransition(), null, "transition", null, 0, -1, Box.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBox_ArcOut(), this.getArc(), this.getArc_BoxOut(), "arcOut", null, 0, -1, Box.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tokenEClass, Token.class, "Token", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getToken_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Token.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBox_Place(), this.getPlace(), null, "place", null, 0, -1, Box.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

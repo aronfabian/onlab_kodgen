@@ -76,20 +76,12 @@ public class PetrinetAdapterFactory extends AdapterFactoryImpl {
 				return createTransitionAdapter();
 			}
 			@Override
-			public Adapter caseArc(Arc object) {
-				return createArcAdapter();
-			}
-			@Override
 			public Adapter caseNet(Net object) {
 				return createNetAdapter();
 			}
 			@Override
 			public Adapter caseBox(Box object) {
 				return createBoxAdapter();
-			}
-			@Override
-			public Adapter caseToken(Token object) {
-				return createTokenAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -140,20 +132,6 @@ public class PetrinetAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link petrinet.Arc <em>Arc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see petrinet.Arc
-	 * @generated
-	 */
-	public Adapter createArcAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link petrinet.Net <em>Net</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -178,20 +156,6 @@ public class PetrinetAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBoxAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link petrinet.Token <em>Token</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see petrinet.Token
-	 * @generated
-	 */
-	public Adapter createTokenAdapter() {
 		return null;
 	}
 

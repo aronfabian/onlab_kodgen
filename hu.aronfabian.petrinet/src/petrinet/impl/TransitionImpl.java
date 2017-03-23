@@ -6,18 +6,18 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-import petrinet.Arc;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import petrinet.Box;
 import petrinet.PetrinetPackage;
+import petrinet.Place;
 import petrinet.Transition;
 
 /**
@@ -30,7 +30,8 @@ import petrinet.Transition;
  * <ul>
  *   <li>{@link petrinet.impl.TransitionImpl#getId <em>Id</em>}</li>
  *   <li>{@link petrinet.impl.TransitionImpl#getName <em>Name</em>}</li>
- *   <li>{@link petrinet.impl.TransitionImpl#getArc <em>Arc</em>}</li>
+ *   <li>{@link petrinet.impl.TransitionImpl#getBox <em>Box</em>}</li>
+ *   <li>{@link petrinet.impl.TransitionImpl#getPlace <em>Place</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,14 +78,24 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getArc() <em>Arc</em>}' reference list.
+	 * The cached value of the '{@link #getBox() <em>Box</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getArc()
+	 * @see #getBox()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Arc> arc;
+	protected EList<Box> box;
+
+	/**
+	 * The cached value of the '{@link #getPlace() <em>Place</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlace()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Place> place;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,47 +114,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	@Override
 	protected EClass eStaticClass() {
 		return PetrinetPackage.Literals.TRANSITION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Arc> getArc() {
-		if (arc == null) {
-			arc = new EObjectWithInverseResolvingEList<Arc>(Arc.class, this, PetrinetPackage.TRANSITION__ARC, PetrinetPackage.ARC__TRANSITION);
-		}
-		return arc;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case PetrinetPackage.TRANSITION__ARC:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getArc()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case PetrinetPackage.TRANSITION__ARC:
-				return ((InternalEList<?>)getArc()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -193,6 +163,30 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Box> getBox() {
+		if (box == null) {
+			box = new EObjectResolvingEList<Box>(Box.class, this, PetrinetPackage.TRANSITION__BOX);
+		}
+		return box;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Place> getPlace() {
+		if (place == null) {
+			place = new EObjectResolvingEList<Place>(Place.class, this, PetrinetPackage.TRANSITION__PLACE);
+		}
+		return place;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -200,8 +194,10 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 				return getId();
 			case PetrinetPackage.TRANSITION__NAME:
 				return getName();
-			case PetrinetPackage.TRANSITION__ARC:
-				return getArc();
+			case PetrinetPackage.TRANSITION__BOX:
+				return getBox();
+			case PetrinetPackage.TRANSITION__PLACE:
+				return getPlace();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,9 +217,13 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 			case PetrinetPackage.TRANSITION__NAME:
 				setName((String)newValue);
 				return;
-			case PetrinetPackage.TRANSITION__ARC:
-				getArc().clear();
-				getArc().addAll((Collection<? extends Arc>)newValue);
+			case PetrinetPackage.TRANSITION__BOX:
+				getBox().clear();
+				getBox().addAll((Collection<? extends Box>)newValue);
+				return;
+			case PetrinetPackage.TRANSITION__PLACE:
+				getPlace().clear();
+				getPlace().addAll((Collection<? extends Place>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,8 +243,11 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 			case PetrinetPackage.TRANSITION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case PetrinetPackage.TRANSITION__ARC:
-				getArc().clear();
+			case PetrinetPackage.TRANSITION__BOX:
+				getBox().clear();
+				return;
+			case PetrinetPackage.TRANSITION__PLACE:
+				getPlace().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -262,8 +265,10 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 				return id != ID_EDEFAULT;
 			case PetrinetPackage.TRANSITION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case PetrinetPackage.TRANSITION__ARC:
-				return arc != null && !arc.isEmpty();
+			case PetrinetPackage.TRANSITION__BOX:
+				return box != null && !box.isEmpty();
+			case PetrinetPackage.TRANSITION__PLACE:
+				return place != null && !place.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

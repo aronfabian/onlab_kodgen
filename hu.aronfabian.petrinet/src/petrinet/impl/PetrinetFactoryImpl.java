@@ -58,10 +58,8 @@ public class PetrinetFactoryImpl extends EFactoryImpl implements PetrinetFactory
 		switch (eClass.getClassifierID()) {
 			case PetrinetPackage.PLACE: return createPlace();
 			case PetrinetPackage.TRANSITION: return createTransition();
-			case PetrinetPackage.ARC: return createArc();
 			case PetrinetPackage.NET: return createNet();
 			case PetrinetPackage.BOX: return createBox();
-			case PetrinetPackage.TOKEN: return createToken();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -92,16 +90,6 @@ public class PetrinetFactoryImpl extends EFactoryImpl implements PetrinetFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Arc createArc() {
-		ArcImpl arc = new ArcImpl();
-		return arc;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Net createNet() {
 		NetImpl net = new NetImpl();
 		return net;
@@ -115,16 +103,6 @@ public class PetrinetFactoryImpl extends EFactoryImpl implements PetrinetFactory
 	public Box createBox() {
 		BoxImpl box = new BoxImpl();
 		return box;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Token createToken() {
-		TokenImpl token = new TokenImpl();
-		return token;
 	}
 
 	/**

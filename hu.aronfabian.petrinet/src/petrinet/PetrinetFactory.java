@@ -40,15 +40,6 @@ public interface PetrinetFactory extends EFactory {
 	Transition createTransition();
 
 	/**
-	 * Returns a new object of class '<em>Arc</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Arc</em>'.
-	 * @generated
-	 */
-	Arc createArc();
-
-	/**
 	 * Returns a new object of class '<em>Net</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,15 +56,6 @@ public interface PetrinetFactory extends EFactory {
 	 * @generated
 	 */
 	Box createBox();
-
-	/**
-	 * Returns a new object of class '<em>Token</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Token</em>'.
-	 * @generated
-	 */
-	Token createToken();
 
 	/**
 	 * Returns the package supported by this factory.
